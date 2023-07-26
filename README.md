@@ -2,7 +2,7 @@
 
 - Interactive app: [cintel-04-reactive](https://denisecase.shinyapps.io/cintel-04-reactive/)
 - Repository: [cintel-04-reactive](https://github.com/Kells2234/cintel-04-reactive)
-- Author: [Kelly Simmons](https://github.com/Kells2234)
+- Author: [KellySimmons](https://github.com/Kells2234)
 
 -----
 
