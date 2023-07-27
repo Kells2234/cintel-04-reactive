@@ -20,6 +20,7 @@ def get_mtcars_inputs():
             max=35,
             value=[10, 35],
         ),
+         ui.input_numeric("MT_CARS_MAX_HP", "Max Horsepower (hp):", value=335.0),
         ui.tags.hr(),
         ui.tags.section(
             ui.h3("MT Cars Table"),
