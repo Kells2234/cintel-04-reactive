@@ -51,7 +51,7 @@ def get_mtcars_server_functions(input, output, session):
         You must be familiar with the dataset to know the column names.
         """
 
-        df = [(df["mpg"] >= input_min) & (df["mpg"] <= input_max) & (df["hp"] <= input.MT_CARS_MAX_HP()) ]
+        df = df[(df["mpg"] >= input_min) & (df["mpg"] <= input_max) & (df["hp"] <= input.MT_CARS_MAX_HP()) ]
 
         # Set the reactive value
         reactive_df.set(df)
@@ -99,6 +99,15 @@ def get_mtcars_server_functions(input, output, session):
         )
 
         return plotnine_plot
+    
+    @output
+    @render_widget
+    def mtcars_plot3():
+        df = reactive_df.get()
+        plotly_express_plot2 = px.scatter(df, x="mpg", y="hp", symbol ="cyl", size="wt")
+        plotly_express_plot2.update_layout(title="MT Cars with Plotly Express")
+        
+        return plotly_express_plot2
 
     # return a list of function names for use in reactive outputs
     return [
@@ -107,4 +116,5 @@ def get_mtcars_server_functions(input, output, session):
         mtcars_output_widget1,
         mtcars_plot1,
         mtcars_plot2,
+        mtcars_plot3
     ]
